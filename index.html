@@ -902,6 +902,57 @@
       margin: 0 auto 2rem;
       color: var(--text-muted);
     }
+     /* SHOWCASE GRID */
+ .showcase-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 1.5rem;
+   margin-top: 2.5rem;
+ }
+ .showcase-card {
+   background: var(--surface-soft);
+   border: 1px solid var(--border-soft);
+   border-radius: var(--radius);
+   border-top: 4px solid var(--accent);
+   padding: 1.5rem 1.25rem;
+   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.8);
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+   text-align: center;
+ }
+ .showcase-card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.95);
+ }
+ .showcase-icon {
+   font-size: 3rem;
+   margin-bottom: 0.75rem;
+ }
+ .showcase-title {
+   font-size: 1rem;
+   font-weight: 600;
+   color: var(--text-strong);
+   margin-bottom: 0.5rem;
+ }
+ .showcase-desc {
+   font-size: 0.88rem;
+   color: var(--text-muted);
+   margin-bottom: 1rem;
+   line-height: 1.4;
+ }
+ .showcase-metrics {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   justify-content: center;
+ }
+ .metric-chip {
+   font-size: 0.75rem;
+   padding: 0.25rem 0.6rem;
+   border-radius: 999px;
+   background: rgba(11, 155, 168, 0.15);
+   color: var(--accent);
+   border: 1px solid rgba(11, 155, 168, 0.3);
+ }
 
     /* PLATFORMS GRID */
     .systems-grid {
@@ -1630,6 +1681,78 @@
       </div>
     </section>
 
+     <!-- PRODUCT SHOWCASE -->
+ <section id="platforms-showcase" aria-labelledby="showcase-heading">
+   <div class="container">
+     <div class="section-eyebrow">Platform Showcase</div>
+     <h2 class="section-title" id="showcase-heading">Integrated Solutions for Every Industry</h2>
+     <p class="section-subtitle">
+       Explore how our 10 vertically integrated platforms work together to deliver certainty across markets.
+     </p>
+     <div class="showcase-grid">
+       <!-- Food & Agri -->
+       <article class="showcase-card" style="border-top-color: #4CAF50;">
+         <div class="showcase-icon">🌾</div>
+         <h3 class="showcase-title">Food & Agriculture</h3>
+         <p class="showcase-desc">Farm-to-shelf resilience, premium specs, farmgate stabilization</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">65+ countries</span>
+           <span class="metric-chip">Farmgate pricing</span>
+         </div>
+       </article>
+       <!-- Energy & Resources -->
+       <article class="showcase-card" style="border-top-color: #FF6B35;">
+         <div class="showcase-icon">⚡</div>
+         <h3 class="showcase-title">Energy & Resources</h3>
+         <p class="showcase-desc">Mine-to-offtaker integration, commodity volatility absorption</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">Critical inputs</span>
+           <span class="metric-chip">De-risked flows</span>
+         </div>
+       </article>
+       <!-- Infrastructure -->
+       <article class="showcase-card" style="border-top-color: #2196F3;">
+         <div class="showcase-icon">🏗️</div>
+         <h3 class="showcase-title">Infrastructure & Power</h3>
+         <p class="showcase-desc">Embedded offtake models, infrastructure that pays for itself</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">Embedded demand</span>
+           <span class="metric-chip">Real utilization</span>
+         </div>
+       </article>
+       <!-- Materials -->
+       <article class="showcase-card" style="border-top-color: #9C27B0;">
+         <div class="showcase-icon">♻️</div>
+         <h3 class="showcase-title">Metals & Materials</h3>
+         <p class="showcase-desc">Primary + recycling integration, circular resource flows</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">Circular model</span>
+           <span class="metric-chip">Reduced risk</span>
+         </div>
+       </article>
+       <!-- Finance -->
+       <article class="showcase-card" style="border-top-color: #00BCD4;">
+         <div class="showcase-icon">💰</div>
+         <h3 class="showcase-title">Financial Services</h3>
+         <p class="showcase-desc">Trade-linked capital, structured finance aligned with assets</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">Trade-linked</span>
+           <span class="metric-chip">Asset-backed</span>
+         </div>
+       </article>
+       <!-- Healthcare -->
+       <article class="showcase-card" style="border-top-color: #E91E63;">
+         <div class="showcase-icon">🏥</div>
+         <h3 class="showcase-title">Healthcare Access</h3>
+         <p class="showcase-desc">Integrated pharma, devices, infrastructure for essential care</p>
+         <div class="showcase-metrics">
+           <span class="metric-chip">Essential access</span>
+           <span class="metric-chip">Underserved markets</span>
+         </div>
+       </article>
+     </div>
+   </div>
+ </section>
     <!-- VALUE‑CHAIN PLATFORMS -->
     <section id="systems" aria-labelledby="yaa-systems-heading">
       <div class="container">
