@@ -26,6 +26,43 @@
 
   <style>
     :root {
+        --primary: #0066cc;
+        --primary-dark: #003d99;
+        --primary-light: #1a85ff;
+        --surface: #0d1220;
+        --surface-alt: #111827;
+        --surface-hover: #1f2937;
+        --border: #2d3748;
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --accent: #00d4ff;
+      }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+    html {
+        scroll-behavior: smooth;
+      }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--surface);
+        color: var(--text);
+        line-height: 1.6;
+        letter-spacing: 0.3px;
+      }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+      }
+    :root {
       --brand: #050816;
       --brand-soft: #090f1f;
       --surface: #0b1220;
