@@ -1,0 +1,97 @@
+# OS & System Files
+.DS_Store
+.DS_Store?
+*.AppleDouble
+*.dot_DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.env.local
+.env.*.local
+
+# Dependencies & Packages
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build & Distribution
+dist/
+build/
+.next/
+out/
+.cache/
+.parcel-cache
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log
+.log
+
+# Temporary Files
+*.tmp
+*.temp
+.temp/
+*.bak
+*.backup
+
+# Private/Secret Files
+.env
+.env.local
+.env.*.local
+secrets/
+*.pem
+*.key
+.private/
+
+# Generated Files
+.website/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Coverage/
+.nyc_output/
+
+# OS Specific
+Thumbs.db
+.Spotlight-V100
+.Trashes
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# IDE Workspace
+.workspace
+.history/
+
+# Testing
+.coverage
+.pytest_cache/
+coverage/
+
+# Miscellaneous
+*.psd
+*.zip
+*.rar
+.cache/
+*.tmp.html
