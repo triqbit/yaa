@@ -477,6 +477,51 @@
       border-color: var(--accent);
       outline: none;
     }
+     /* MEGA MENU */
+ .primary-nav-list li {
+   position: relative;
+ }
+ .mega-menu {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   display: none;
+   min-width: 400px;
+   background: rgba(5, 8, 22, 0.99);
+   border: 1px solid var(--border);
+   border-radius: 8px;
+   padding: 1.5rem 2rem;
+   margin-top: 0.5rem;
+   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+   z-index: 999;
+ }
+ .primary-nav-list li:hover > .mega-menu {
+   display: block;
+ }
+ .mega-menu-title {
+   font-size: 0.78rem;
+   text-transform: uppercase;
+   letter-spacing: 0.16em;
+   color: var(--accent-2);
+   margin-bottom: 0.75rem;
+ }
+ .mega-menu-section {
+   margin-bottom: 1rem;
+ }
+ .mega-menu-links {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+ }
+ .mega-menu-links a {
+   color: var(--text-muted);
+   font-size: 0.9rem;
+   transition: color 0.2s ease;
+ }
+ .mega-menu-links a:hover {
+   color: var(--accent);
+ }
 
     /* Mobile hamburger */
     .nav-toggle {
@@ -1320,10 +1365,97 @@
 
         <nav id="yaa-primary-nav" aria-label="Primary" role="navigation">
           <ul class="primary-nav-list">
-            <li><a href="#systems">Platforms</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#resilience">Resilience</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#systems">Platforms</a>
+                <div class="mega-menu">
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Value-Chain Platforms</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#systems">Food & Agri Platform</a></li>
+                      <li><a href="#systems">Energy & Resources</a></li>
+                      <li><a href="#systems">Infrastructure & Power</a></li>
+                      <li><a href="#systems">Metals & Materials</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">More Platforms</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#systems">Chemicals Platform</a></li>
+                      <li><a href="#systems">Digital Intelligence</a></li>
+                      <li><a href="#systems">Consumer & Lifestyle</a></li>
+                      <li><a href="#systems">Financial Services</a></li>
+                      <li><a href="#systems">Healthcare</a></li>
+                      <li><a href="#systems">Innovation & Clean-Tech</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+<li><a href="#services">Services</a>
+                <div class="mega-menu">
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Core Services</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#services">Platform Design & Operation</a></li>
+                      <li><a href="#services">Supply & Offtake Structuring</a></li>
+                      <li><a href="#services">Resilience & Risk Solutions</a></li>
+                      <li><a href="#services">Digital Platforms & Intelligence</a></li>
+                      <li><a href="#services">Trade-Linked Finance</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">By Industry</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#services">Food Security</a></li>
+                      <li><a href="#services">Energy Systems</a></li>
+                      <li><a href="#services">Healthcare Access</a></li>
+                      <li><a href="#services">Materials & Recycling</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+<li><a href="#resilience">Resilience</a>
+                <div class="mega-menu">
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Resilience Frameworks</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#resilience">End-to-End Control</a></li>
+                      <li><a href="#resilience">Continuity Under Stress</a></li>
+                      <li><a href="#resilience">Strategic Advantage</a></li>
+                      <li><a href="#resilience">Risk Management</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Impact & Metrics</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#resilience">Commercial Returns</a></li>
+                      <li><a href="#resilience">Systemic Stability</a></li>
+                      <li><a href="#resilience">Market Continuity</a></li>
+                      <li><a href="#resilience">Case Studies</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+<li><a href="#contact">Contact</a>
+                <div class="mega-menu">
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Get in Touch</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#contact">General Inquiries</a></li>
+                      <li><a href="#contact">Schedule a Call</a></li>
+                      <li><a href="#contact">Partner Opportunities</a></li>
+                      <li><a href="#contact">Investment Inquiries</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-section">
+                    <div class="mega-menu-title">Resources</div>
+                    <ul class="mega-menu-links">
+                      <li><a href="#contact">Download Brochure</a></li>
+                      <li><a href="#contact">Case Studies</a></li>
+                      <li><a href="#contact">FAQs</a></li>
+                      <li><a href="#contact">Blog</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
             <li><a class="nav-cta" href="#contact">Partner with YAA</a></li>
           </ul>
 
