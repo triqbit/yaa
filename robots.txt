@@ -1,0 +1,23 @@
+# robots.txt for YAA.Group
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yaa.group/sitemap.xml
+
+# Block common bot paths (optional - adjust as needed)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_redirects
+Disallow: /.well-known/
+
+# Crawl-delay for politeness (optional)
+# Crawl-delay: 1
+
+# Block specific bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /
