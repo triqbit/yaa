@@ -1331,6 +1331,105 @@
       margin-top: 3.1rem;
     }
 
+     /* FOOTER GRID */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem 1.5rem;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .footer-column-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+      padding: 0.25rem 0;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    /* FOOTER BOTTOM */
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 1.5rem 0;
+      font-size: 0.8rem;
+    }
+    .footer-bottom-left {
+      text-align: left;
+    }
+    .footer-bottom-center {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .footer-bottom-right {
+      text-align: right;
+    }
+    .footer-credit {
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .footer-tagline {
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 0;
+    }
+    .footer-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    .footer-social:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(11, 155, 168, 0.1);
+    }
+    @media (max-width: 720px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+      }
+      .footer-bottom-left,
+      .footer-bottom-center,
+      .footer-bottom-right {
+        text-align: center;
+      }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .hero-grid {
@@ -2128,9 +2227,97 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="container">
-      © <span id="year"></span> YAA.Group · Architect of Resilient Value Chains
+ <!-- FOOTER -->
+    <div class="footer-grid">
+      <!-- Column 1: Platforms -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Platforms</h3>
+        <ul class="footer-links">
+          <li><a href="#food-agri">Food & Agriculture</a></li>
+          <li><a href="#energy">Energy & Resources</a></li>
+          <li><a href="#infrastructure">Infrastructure & Power</a></li>
+          <li><a href="#metals">Metals & Materials</a></li>
+          <li><a href="#chemicals">Chemicals</a></li>
+          <li><a href="#digital">Digital Intelligence</a></li>
+          <li><a href="#consumer">Consumer & Lifestyle</a></li>
+          <li><a href="#finance">Financial Services</a></li>
+          <li><a href="#healthcare">Healthcare</a></li>
+          <li><a href="#innovation">Innovation & Clean-Tech</a></li>
+        </ul>
+      </div>
+      <!-- Column 2: Services -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#platform-design">Platform Design & Operation</a></li>
+          <li><a href="#supply-offtake">Supply & Offtake Structuring</a></li>
+          <li><a href="#resilience">Resilience & Risk Solutions</a></li>
+          <li><a href="#digital-platforms">Digital Platforms & Intelligence</a></li>
+          <li><a href="#trade-finance">Trade-Linked Finance</a></li>
+          <li><a href="#food-security">Food Security</a></li>
+          <li><a href="#energy-systems">Energy Systems</a></li>
+          <li><a href="#healthcare-access">Healthcare Access</a></li>
+        </ul>
+      </div>
+      <!-- Column 3: Resources -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#white-papers">White Papers</a></li>
+          <li><a href="#research">Research & Insights</a></li>
+          <li><a href="#blog">Blog & News</a></li>
+          <li><a href="#events">Events & Webinars</a></li>
+          <li><a href="#downloads">Downloads & Brochures</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#glossary">Glossary</a></li>
+        </ul>
+      </div>
+      <!-- Column 4: Company -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Company</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About YAA.Group</a></li>
+          <li><a href="#team">Leadership Team</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#sustainability">Sustainability & ESG</a></li>
+          <li><a href="#partnerships">Partnerships</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#media">Media & Press</a></li>
+          <li><a href="#governance">Governance</a></li>
+        </ul>
+      </div>
+      <!-- Column 5: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Use</a></li>
+          <li><a href="#cookie-policy">Cookie Policy</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#data-protection">Data Protection</a></li>
+          <li><a href="#ip-policy">Intellectual Property</a></li>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Footer Section -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p class="footer-credit">
+          © <span id="year"></span> YAA.Group · Architect of Resilient Value Chains
+        </p>
+      </div>
+      <div class="footer-bottom-center">
+        <a href="#" class="footer-social" aria-label="LinkedIn">𝕏</a>
+        <a href="#" class="footer-social" aria-label="Twitter">LinkedIn</a>
+        <a href="#" class="footer-social" aria-label="Facebook">Medium</a>
+      </div>
+      <div class="footer-bottom-right">
+        <p class="footer-tagline">Vertically integrated platforms for resilient value chains</p>
+      </div>
     </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
