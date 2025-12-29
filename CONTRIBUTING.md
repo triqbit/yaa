@@ -239,3 +239,186 @@ Pull requests will be evaluated on:
 ## Questions?
 
 Refer to DEVELOPMENT_ROADMAP.md for detailed development guidelines and setup instructions.
+
+
+## 🚀 Advanced Contribution Topics
+
+### Rebasing vs. Merging
+
+When updating feature branches:
+
+```bash
+# Option 1: Rebase (keeps history clean)
+git fetch origin
+git rebase origin/main
+git push --force-with-lease origin feature/your-feature
+
+# Option 2: Merge (preserves branch history)
+git merge origin/main
+git push origin feature/your-feature
+```
+
+**Recommendation**: Use rebase for single-contributor features, merge for collaborative branches.
+
+### Code Review Best Practices
+
+#### For PR Authors
+1. **Keep PRs Small**: Max 400 lines changed
+2. **Self-Review First**: Check your own code before requesting review
+3. **Provide Context**: Link to issues, design docs, or related PRs
+4. **Address Feedback Promptly**: Don't let reviews go stale
+5. **Request Re-review**: After addressing comments, request another review
+
+#### For Reviewers
+1. **Review Within 24 Hours**: Don't delay code reviews
+2. **Be Constructive**: Suggest improvements, don't criticize
+3. **Look Beyond Code**: Consider accessibility, performance, security
+4. **Approve or Request Changes**: Don't leave ambiguous feedback
+5. **Document Reasoning**: Explain why changes are needed
+
+### Conflict Resolution
+
+**When conflicts occur:**
+
+```bash
+# Update your branch
+git fetch origin
+git rebase origin/main
+
+# Resolve conflicts in editor
+# Look for <<<<<<<, =======, >>>>>>>
+
+# Stage resolved files
+git add .
+
+# Continue rebase
+git rebase --continue
+
+# Force push to your branch
+git push --force-with-lease origin feature/your-feature
+```
+
+## 📊 Testing Requirements
+
+### Cross-Browser Testing
+
+Before submitting PR, test in:
+- **Desktop**: Chrome (latest), Firefox (latest), Safari (latest)
+- **Mobile**: iOS Safari (latest), Android Chrome (latest)
+- **Tablet**: iPad Safari, Android tablets
+
+### Automated Testing
+
+Run these before committing:
+
+```bash
+# Lighthouse audit (target 90+)
+# Accessibility check with axe DevTools
+# Spell-check content
+# Validate HTML with W3C validator
+# CSS lint with StyleLint
+```
+
+### Performance Testing
+
+Use Chrome DevTools:
+1. Open DevTools > Performance tab
+2. Record user interactions
+3. Check Largest Contentful Paint (LCP) < 2.5s
+4. Check Cumulative Layout Shift (CLS) < 0.1
+5. Check Interaction to Next Paint (INP) < 200ms
+
+## 🔐 Security in Contributing
+
+### Do Not
+
+- Commit API keys, tokens, or secrets
+- Include personal information
+- Use third-party scripts without review
+- Make database connections from frontend
+- Hardcode credentials anywhere
+
+### Do
+
+- Use environment variables (in `.env.example`)
+- Review third-party dependencies
+- Keep dependencies updated
+- Validate all user inputs
+- Follow OWASP guidelines
+
+## 📚 Documentation Standards
+
+### Inline Code Comments
+
+```javascript
+// BAD: Obvious comment
+const x = 5; // Set x to 5
+
+// GOOD: Explains WHY
+const maxRetries = 5; // API allows 60/min, max 5 retries
+```
+
+### Function Documentation
+
+```javascript
+/**
+ * Toggles mobile menu visibility
+ * @param {HTMLElement} menuElement - The menu container
+ * @param {boolean} isOpen - Current menu state
+ * @returns {boolean} New menu state
+ */
+function toggleMenu(menuElement, isOpen) {
+  // Implementation
+}
+```
+
+## 🌟 Contribution Workflow Tips
+
+### Local Development Setup
+
+```bash
+# Clone and setup
+git clone https://github.com/triqbit/yaa.git
+cd yaa
+
+# Create feature branch
+git checkout -b feature/amazing-feature
+
+# Open in VS Code
+code .
+
+# Start local testing
+python -m http.server 8000
+# Visit http://localhost:8000
+```
+
+### Commit Best Practices
+
+- **One feature = One commit** (or logical groups)
+- **Atomic commits**: Each commit should work independently
+- **Meaningful messages**: Explain WHAT and WHY
+- **Reference issues**: `Fixes #123` in commit body
+
+## 🎉 Getting Help
+
+### Common Issues
+
+**"Permission denied (publickey)" error**
+- Check SSH key: `ssh -T git@github.com`
+- Add SSH key to GitHub settings
+- Or use HTTPS instead: `git clone https://...`
+
+**"Detached HEAD" state**
+- Switch to main: `git checkout main`
+- Or create a new branch: `git checkout -b feature/recovery`
+
+**"Your branch has diverged"**
+- Fetch latest: `git fetch origin`
+- Rebase onto main: `git rebase origin/main`
+
+---
+
+**Thank you for contributing!** Your efforts make this project better.
+
+**Last Updated**: December 29, 2025
+**License**: MIT
