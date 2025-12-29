@@ -1,244 +1,1595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags - Essential for SEO & Accessibility -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-    <!-- SEO Meta Tags -->
-    <title>YAA.Group - Vertically Integrated Value-Chain Platforms for Resilient Supply</title>
-    <meta name="description" content="YAA.Group designs, owns, and operates vertically integrated value-chain platforms across food, energy, materials, finance, healthcare, and digital sectors. Delivering certainty in volatile markets across 65+ countries." />
-    <meta name="keywords" content="value chain, vertically integrated, food security, energy, supply resilience, emerging markets" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="canonical" href="https://triqbit.github.io/yaa/" />
-    
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="YAA.Group - Architect of Resilient Value Chains" />
-    <meta property="og:description" content="Vertically integrated platforms delivering certainty in volatile global markets." />
-    <meta property="og:url" content="https://triqbit.github.io/yaa/" />
-    <meta property="og:image" content="https://triqbit.github.io/yaa/images/yaa.group.horizontal.png" />
-    <meta property="og:image:alt" content="YAA.Group Logo" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="YAA.Group - Resilient Value-Chain Platforms" />
-    <meta name="twitter:description" content="Operating vertically integrated platforms across 65+ countries." />
-    <meta name="twitter:image" content="https://triqbit.github.io/yaa/images/yaa.group.horizontal.png" />
-    
-    <!-- Theme & Branding -->
-    <meta name="theme-color" content="#050816" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.y.chat.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.monochrome.png" />
-    <link rel="alternate icon" href="favicon.monochrome.png" />
-    <link rel="shortcut icon" href="favicon.y.chat.png" />
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    
-    <!-- Google Fonts - Optimized Loading -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
-    
-    <!-- JSON-LD Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "YAA.Group",
-        "url": "https://triqbit.github.io/yaa/",
-        "logo": "https://triqbit.github.io/yaa/images/yaa.group.horizontal.png",
-        "description": "Vertically integrated business platform designing, owning, and operating value-chain platforms across food, energy, materials, finance, healthcare, and digital sectors.",
-        "sameAs": [
-            "https://www.linkedin.com/company/yaa-group",
-            "https://twitter.com/yaagroup"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Global",
-            "addressRegion": "65+ Countries"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Business Development",
-            "email": "contact@yaa.group"
-        }
+  <meta charset="UTF-8" />
+  <title>YAA.Group — Architect of Resilient Value Chains</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="YAA.Group designs, owns, and operates vertically integrated business platforms that deliver certainty in volatile markets and optionality through integration across food, energy, materials, finance, healthcare, and digital."
+  />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.y.chat.png" />
+  <link rel="alternate icon" type="image/png" href="favicon.monchrome.png" />
+
+  <style>
+    :root {
+      --brand: #050816;
+      --brand-soft: #090f1f;
+      --surface: #0b1220;
+      --surface-soft: #111827;
+      --border: #1f2937;
+      --border-soft: #273449;
+      --text: #e5e7eb;
+      --text-strong: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #0B9BA8;
+      --accent-soft: rgba(11, 155, 168, 0.2);
+      --accent-2: #E8A545;
+      --accent-2-soft: rgba(232, 165, 69, 0.16);
+      --radius: 14px;
+      --shadow-soft: 0 20px 55px rgba(15, 23, 42, 0.95);
     }
-    </script>
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, #020617 0, #050816 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.6rem;
+    }
+
+    /* HEADER + NAV */
+    header[role="banner"] {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(5, 8, 22, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      display: block;
+      height: 42px;
+      max-width: 260px;
+      width: auto;
+    }
+
+    nav[role="navigation"] {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .primary-nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.9rem;
+      font-size: 0.9rem;
+    }
+
+    .primary-nav-list a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.18s ease;
+    }
+
+    .primary-nav-list a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      transition: width 0.18s ease;
+    }
+
+    .primary-nav-list a:hover,
+    .primary-nav-list a:focus-visible {
+      color: var(--text-strong);
+      outline: none;
+    }
+
+    .primary-nav-list a:hover::after,
+    .primary-nav-list a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: var(--text-strong);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      margin-left: 1rem;
+    }
+
+    .nav-toggle button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.96);
+      color: var(--text-strong);
+      cursor: pointer;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-toggle button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .nav-toggle-icon {
+      width: 18px;
+      height: 14px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-toggle-icon span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text-strong);
+      transition: transform 0.18s ease, opacity 0.18s ease, top 0.18s ease;
+    }
+
+    .nav-toggle-icon span:nth-child(1) { top: 0; }
+    .nav-toggle-icon span:nth-child(2) { top: 6px; }
+    .nav-toggle-icon span:nth-child(3) { top: 12px; }
+
+    .mobile-nav-panel {
+      display: none;
+      position: fixed;
+      inset: 70px 0 0 0;
+      z-index: 35;
+      background: rgba(5, 8, 22, 0.99);
+      backdrop-filter: blur(18px);
+      border-top: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .mobile-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.6rem 1.8rem;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .mobile-nav-list a {
+      display: inline-flex;
+      padding: 0.5rem 0;
+      color: var(--text-muted);
+    }
+
+    .mobile-nav-list a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .mobile-nav-cta {
+      margin-top: 0.9rem;
+      display: inline-flex;
+      width: 100%;
+    }
+
+    .mobile-nav-cta a {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* MAIN */
+    main[role="main"] {
+      padding-bottom: 3.8rem;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4rem 0 3.6rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.05fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.32rem 1rem 0.35rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 0.95));
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      line-height: 1.18;
+      margin-bottom: 1rem;
+      color: var(--text-strong);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.08s ease, box-shadow 0.08s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #22d3ee 0, var(--accent) 55%);
+      color: #020617;
+      box-shadow: 0 16px 40px rgba(8, 47, 73, 0.85);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      outline: none;
+      box-shadow: 0 18px 45px rgba(8, 47, 73, 0.95);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.85);
+      color: var(--text);
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+      background: rgba(15, 23, 42, 0.96);
+      outline: none;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .hero-note span {
+      color: var(--accent-2);
+    }
+
+    /* HERO SIDE CARD */
+    .hero-card {
+      background:
+        radial-gradient(circle at 0 0, rgba(15, 118, 110, 0.4), rgba(15, 23, 42, 1));
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.4rem 1.5rem 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero-card-pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(232, 165, 69, 0.8);
+      background: var(--accent-2-soft);
+      color: var(--accent-2);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-main {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-orbit {
+      flex-shrink: 0;
+      width: 76px;
+      height: 76px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 10%, #1e293b 0, #020617 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-orbit svg {
+      filter: drop-shadow(0 0 14px rgba(8, 145, 178, 0.8));
+    }
+
+    @keyframes rotate1 { to { transform: rotate(360deg); } }
+    @keyframes rotate2 { to { transform: rotate(-360deg); } }
+
+    .hero-card-copy {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-copy span {
+      color: var(--text-strong);
+      font-weight: 500;
+    }
+
+    .hero-card-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+
+    .metric {
+      border-radius: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.98);
+      padding: 0.6rem 0.7rem;
+      font-size: 0.78rem;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      margin-bottom: 0.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-strong);
+    }
+
+    .metric-sub {
+      margin-top: 0.1rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* STATS BAND */
+    .stats-band {
+      margin-top: 3.2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at 50% 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.3rem;
+      padding: 1.5rem 0 1.6rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-value {
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: var(--text-strong);
+    }
+
+    .stat-note {
+      font-size: 0.76rem;
+      color: var(--accent-2);
+      margin-top: 0.15rem;
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 3.4rem 0;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 0.35rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: var(--text-strong);
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+    }
+
+    /* PLATFORMS GRID */
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .system-card {
+      background: var(--surface-soft);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
+      padding: 1.15rem 1.15rem 1.05rem;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.8);
+    }
+
+    .system-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .system-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .system-index {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .system-name {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    .system-chip {
+      font-size: 0.7rem;
+      border-radius: 999px;
+      padding: 0.18rem 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: var(--text-muted);
+    }
+
+    .system-benefit {
+      font-size: 0.87rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-strong);
+    }
+
+    .system-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    /* PROOF STRIP */
+    .proof-strip {
+      margin-top: 2.6rem;
+      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.98), rgba(15,23,42,1));
+      border-radius: 20px;
+      border: 1px solid rgba(31,41,55,0.9);
+      padding: 1.8rem 1.8rem 1.7rem;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.95);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 1.8rem;
+      align-items: stretch;
+    }
+
+    .proof-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .proof-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.28rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(15,118,110,0.18);
+      border: 1px solid rgba(45,212,191,0.45);
+      color: #6ee7b7;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .proof-badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.25);
+    }
+
+    .proof-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    .proof-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .proof-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .proof-pill {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.82rem;
+    }
+
+    .proof-card {
+      border-radius: 14px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.95), rgba(15,23,42,0.98));
+      padding: 1rem 1rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .proof-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .proof-main {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      line-height: 1.35;
+    }
+
+    .proof-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* RESILIENCE */
+    .pill-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.3rem;
+      font-size: 0.83rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      font-size: 0.83rem;
+    }
+
+    .res-card {
+      background: var(--surface-soft);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+    }
+
+    .res-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text-strong);
+    }
+
+    .res-desc {
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .res-list {
+      list-style: disc;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .res-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* SERVICES STRIP */
+    .services-strip {
+      margin-top: 2.4rem;
+      background: var(--brand-soft);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 1.35rem 1.5rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .services-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text-strong);
+    }
+
+    .services-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .services-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+    }
+
+    .services-tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: var(--text-muted);
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .services-item-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    .services-item-desc {
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-box {
+      background: var(--surface-soft);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
+      padding: 1.25rem 1.35rem;
+      font-size: 0.9rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+    }
+
+    .contact-box h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-strong);
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-email {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    form {
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.98);
+      color: var(--text);
+      padding: 0.55rem 0.6rem;
+      font: inherit;
+    }
+
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .btn[type="submit"] {
+      width: 100%;
+      margin-top: 0.4rem;
+    }
+
+    /* FOOTER */
+    footer[role="contentinfo"] {
+      border-top: 1px solid var(--border);
+      padding: 1.7rem 0 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #020617;
+      margin-top: 3.1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+        gap: 2.1rem;
+      }
+      .proof-strip {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 3.1rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        max-width: 390px;
+        margin: 1.9rem auto 0;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .systems-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .res-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-strip {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .proof-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .contact-wrap {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .primary-nav-list {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .res-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Skip Navigation Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="navbar__container">
-            <a href="/" class="navbar__logo" aria-label="YAA.Group Home">
-                <img src="images/yaa.group.horizontal.png" alt="YAA.Group Logo" class="navbar__logo-img" />
-            </a>
-            <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle">
-                <span class="navbar__toggle-icon"></span>
-                <span class="navbar__toggle-icon"></span>
-                <span class="navbar__toggle-icon"></span>
+  <header role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#main" class="brand" aria-label="YAA Group home">
+          <span class="brand-logo">
+            <img src="yaa.group.horizontal.png" alt="YAA Group logo" />
+          </span>
+        </a>
+
+        <nav id="yaa-primary-nav" aria-label="Primary" role="navigation">
+          <ul class="primary-nav-list">
+            <li><a href="#systems">Platforms</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#resilience">Resilience</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-cta" href="#contact">Partner with YAA</a></li>
+          </ul>
+
+          <div class="nav-toggle">
+            <button
+              type="button"
+              id="yaa-nav-toggle-button"
+              aria-label="Open main navigation"
+              aria-expanded="false"
+              aria-controls="yaa-mobile-nav"
+            >
+              <span class="nav-toggle-icon" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+              <span>Menu</span>
             </button>
-            <ul class="navbar__menu" id="nav-menu">
-                <li class="navbar__item">
-                    <a href="#platforms" class="navbar__link">Platforms</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#about" class="navbar__link">About</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#contact" class="navbar__link">Contact</a>
-                </li>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div
+      id="yaa-mobile-nav"
+      class="mobile-nav-panel"
+      aria-hidden="true"
+    >
+      <div class="mobile-nav-inner">
+        <ul class="mobile-nav-list">
+          <li><a href="#systems">Platforms</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#resilience">Resilience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-cta">
+          <a href="#contact" class="btn btn-primary">Partner with YAA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="yaa-hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">
+              <span class="hero-dot"></span>
+              Resilient Value Chains for Volatile Markets
+            </div>
+            <h1 id="yaa-hero-heading">
+              Resilient Value Chains.<br />Optionality Through Integration.
+            </h1>
+            <p class="hero-subtitle">
+              YAA.Group designs and operates vertically integrated business platforms that
+              secure critical inputs, stabilize offtake, and keep your value chains running
+              when markets dislocate — across food, energy, materials, finance, healthcare,
+              and digital.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Talk to a Platforms Lead</a>
+              <a href="#systems" class="btn btn-outline">Explore the 10 Platforms</a>
+            </div>
+            <p class="hero-note">
+              10 platforms • 65+ countries • <span>Full stack: upstream to retail</span>
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Vertical integration snapshot">
+            <div class="hero-card-header">
+              <div class="hero-card-title">Vertical Integration for Resilience</div>
+              <div class="hero-card-pill">Value‑Chain Architecture</div>
+            </div>
+            <div class="hero-card-main">
+              <div class="hero-orbit">
+                <svg
+                  viewBox="0 0 100 100"
+                  width="58"
+                  height="58"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="#0B9BA8"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                    style="animation:rotate1 20s linear infinite; transform-origin:50px 50px"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="25"
+                    fill="none"
+                    stroke="#E8A545"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                    style="animation:rotate2 30s linear infinite; transform-origin:50px 50px"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="12"
+                    fill="none"
+                    stroke="#0B9BA8"
+                    stroke-width="1.5"
+                  />
+                  <circle cx="50" cy="50" r="3" fill="#0B9BA8" />
+                </svg>
+              </div>
+              <p class="hero-card-copy">
+                By owning critical stages from <span>upstream inputs</span> to
+                <span>downstream brands and offtake</span>, YAA.Group reduces dependency on fragile links,
+                maintains continuity under stress, and unlocks optionality when markets move.
+              </p>
+            </div>
+            <div class="hero-card-metrics">
+              <div class="metric">
+                <div class="metric-label">Control</div>
+                <div class="metric-value">End‑to‑end visibility</div>
+                <div class="metric-sub">Across physical &amp; digital flows</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Continuity</div>
+                <div class="metric-value">De‑risked inputs</div>
+                <div class="metric-sub">Farm, mine &amp; plant to offtaker</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Speed</div>
+                <div class="metric-value">Faster response</div>
+                <div class="metric-sub">To shocks &amp; regime shifts</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Quality</div>
+                <div class="metric-value">Stable specs</div>
+                <div class="metric-sub">Through cycles &amp; disruptions</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="stats-band" aria-label="YAA.Group key figures">
+        <div class="container">
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-label">Platforms</div>
+              <div class="stat-value">10</div>
+              <div class="stat-note">Interlocking, vertically integrated</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Global Reach</div>
+              <div class="stat-value">65+</div>
+              <div class="stat-note">Strategic markets &amp; corridors</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Ownership Model</div>
+              <div class="stat-value">Light Equity</div>
+              <div class="stat-note">Strategic control where it matters</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Integration</div>
+              <div class="stat-value">Full Stack</div>
+              <div class="stat-note">Upstream to brands &amp; retail</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE‑CHAIN PLATFORMS -->
+    <section id="systems" aria-labelledby="yaa-systems-heading">
+      <div class="container">
+        <div class="section-eyebrow">Value‑Chain Platforms</div>
+        <h2 class="section-title" id="yaa-systems-heading">
+          Ten Integrated Platforms, One Value Chain
+        </h2>
+        <p class="section-subtitle">
+          YAA.Group operates 10 integrated value‑chain platforms spanning resources, infrastructure, brands, finance, healthcare, and digital — designed to make supply chains predictable, resilient, and future‑ready.
+        </p>
+
+        <div class="systems-grid">
+          <!-- platform cards as before -->
+          <!-- 1 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">1</span>
+                <h3 class="system-name">Food &amp; Agri Platform</h3>
+              </div>
+              <span class="system-chip">Farmgate to Shelf</span>
+            </div>
+            <p class="system-benefit">Predictable Supply, Premium Quality</p>
+            <p class="system-desc">
+              Stabilizing farmgate prices, guaranteeing specs, and securing food flows across 65+ countries to support resilient and inclusive food systems.
+            </p>
+          </article>
+
+          <!-- 2 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">2</span>
+                <h3 class="system-name">Energy &amp; Resources Platform</h3>
+              </div>
+              <span class="system-chip">Mine to Offtaker</span>
+            </div>
+            <p class="system-benefit">Critical Inputs, De‑Risked</p>
+            <p class="system-desc">
+              Integrating upstream resource development, logistics, and long‑term offtake to absorb commodity volatility and safeguard essential energy and resource flows.
+            </p>
+          </article>
+
+          <!-- 3 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">3</span>
+                <h3 class="system-name">Infrastructure &amp; Power Platform</h3>
+              </div>
+              <span class="system-chip">Embedded Offtake</span>
+            </div>
+            <p class="system-benefit">Infrastructure That Pays for Itself</p>
+            <p class="system-desc">
+              Developing logistics, storage, and power infrastructure with embedded demand, aligning returns with real‑world utilization instead of speculative capacity.
+            </p>
+          </article>
+
+          <!-- 4 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">4</span>
+                <h3 class="system-name">Metals &amp; Materials Platform</h3>
+              </div>
+              <span class="system-chip">Primary + Recycling</span>
+            </div>
+            <p class="system-benefit">Circular Resource Flows</p>
+            <p class="system-desc">
+              Linking primary production with recycling and reuse streams to secure key materials, reduce input risk, and support circular, low‑carbon industry.
+            </p>
+          </article>
+
+          <!-- 5 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">5</span>
+                <h3 class="system-name">Chemicals Platform</h3>
+              </div>
+              <span class="system-chip">Transition Inputs</span>
+            </div>
+            <p class="system-benefit">High‑Performance Solutions</p>
+            <p class="system-desc">
+              Supplying specialty and transition chemicals that underpin manufacturing, energy, and climate‑tech ecosystems with secure, integrated supply paths.
+            </p>
+          </article>
+
+          <!-- 6 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">6</span>
+                <h3 class="system-name">Digital Intelligence Platform</h3>
+              </div>
+              <span class="system-chip">Intelligence Layer</span>
+            </div>
+            <p class="system-benefit">Intelligence as a Service</p>
+            <p class="system-desc">
+              Providing data, visibility, and risk analytics on top of physical platforms, orchestrating flows, finance, and decisions in real time.
+            </p>
+          </article>
+
+          <!-- 7 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">7</span>
+                <h3 class="system-name">Consumer &amp; Lifestyle Platform</h3>
+              </div>
+              <span class="system-chip">Brands &amp; Retail</span>
+            </div>
+            <p class="system-benefit">Responsible Consumption</p>
+            <p class="system-desc">
+              Building brands and retail channels that translate upstream resilience, traceability, and sustainability into trusted products and experiences.
+            </p>
+          </article>
+
+          <!-- 8 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">8</span>
+                <h3 class="system-name">Financial Services Platform</h3>
+              </div>
+              <span class="system-chip">Trade‑Linked Capital</span>
+            </div>
+            <p class="system-benefit">Finance That Enables Trade</p>
+            <p class="system-desc">
+              Deploying trade‑linked and structured finance aligned with real assets, inventories, and offtake flows, rather than detached financial exposure.
+            </p>
+          </article>
+
+          <!-- 9 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">9</span>
+                <h3 class="system-name">Healthcare Platform</h3>
+              </div>
+              <span class="system-chip">Essential Access</span>
+            </div>
+            <p class="system-benefit">Access to Essential Care</p>
+            <p class="system-desc">
+              Integrating pharma, devices, and healthcare infrastructure in under‑served markets to improve reliable access to essential care.
+            </p>
+          </article>
+
+          <!-- 10 -->
+          <article class="system-card">
+            <div class="system-header">
+              <div class="system-left">
+                <span class="system-index" aria-hidden="true">10</span>
+                <h3 class="system-name">Innovation &amp; Clean‑Tech Platform</h3>
+              </div>
+              <span class="system-chip">Future Pipeline</span>
+            </div>
+            <p class="system-benefit">Future‑Proofing Value Chains</p>
+            <p class="system-desc">
+              Incubating climate‑tech, circular models, and new materials that anticipate the next decade of disruption and embed resilience across all platforms.
+            </p>
+          </article>
+        </div>
+
+        <!-- PROOF STRIP -->
+        <section class="proof-strip" aria-labelledby="proof-heading">
+          <div class="proof-left">
+            <div class="proof-badge">
+              <span class="proof-badge-dot" aria-hidden="true"></span>
+              Selected engagement patterns
+            </div>
+            <h3 class="proof-title" id="proof-heading">Who We Design Platforms For</h3>
+            <p class="proof-sub">
+              YAA.Group structures and operates value‑chain platforms with offtakers, asset owners, public‑sector partners, and innovators that need supply chains to stay reliable in volatile markets.
+            </p>
+            <div class="proof-pill-row">
+              <span class="proof-pill">Offtakers &amp; industrials</span>
+              <span class="proof-pill">Asset owners &amp; developers</span>
+              <span class="proof-pill">Public &amp; healthcare partners</span>
+            </div>
+          </div>
+
+          <div class="proof-grid">
+            <article class="proof-card">
+              <p class="proof-label">Offtakers &amp; industrials</p>
+              <p class="proof-main">Securing critical inputs</p>
+              <p class="proof-note">
+                Food brands, utilities, and manufacturers seeking predictable supply, stable specs, and long‑term offtake in Food &amp; Agri, Energy, Metals, and Chemicals.
+              </p>
+            </article>
+            <article class="proof-card">
+              <p class="proof-label">Asset owners &amp; developers</p>
+              <p class="proof-main">Making infrastructure pay for itself</p>
+              <p class="proof-note">
+                Owners of logistics, storage, and power assets looking to embed offtake and integrate financing so returns track real utilization.
+              </p>
+            </article>
+            <article class="proof-card">
+              <p class="proof-label">Public &amp; healthcare partners</p>
+              <p class="proof-main">Essential service resilience</p>
+              <p class="proof-note">
+                Governments, health systems, and multilaterals aiming to improve access to essential care, medicines, and critical services in under‑served markets.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section id="services" aria-labelledby="yaa-services-heading">
+      <div class="container">
+        <div class="section-eyebrow">Core Services</div>
+        <h2 class="section-title" id="yaa-services-heading">What YAA.Group Delivers</h2>
+        <p class="section-subtitle">
+          From upstream resource development to downstream retail and finance, YAA.Group brings together assets, contracts, capital, and data into coherent value‑chain platforms that make volatility work for partners — not against them.
+        </p>
+
+        <div class="services-strip">
+          <div>
+            <div class="services-title">Platform‑Level Design &amp; Operation</div>
+            <p class="services-sub">
+              YAA.Group acts as a value‑chain architect and operator, designing integrated platforms with clear incentives, governance, and risk‑sharing across all stages.
+            </p>
+            <div class="services-tags">
+              <span class="services-tag">Platform architecture</span>
+              <span class="services-tag">Offtake &amp; supply structures</span>
+              <span class="services-tag">Light‑equity ownership</span>
+              <span class="services-tag">ESG &amp; circularity</span>
+            </div>
+          </div>
+          <div class="services-list">
+            <div>
+              <div class="services-item-title">Supply &amp; Offtake Structuring</div>
+              <p class="services-item-desc">
+                Long‑term supply, farmgate and mine‑to‑offtaker agreements, embedded offtake in infrastructure, and circular flows that stabilize volumes, specs, and prices.
+              </p>
+            </div>
+            <div>
+              <div class="services-item-title">Resilience &amp; Risk Solutions</div>
+              <p class="services-item-desc">
+                Integrated strategies that reduce single‑point dependencies, secure critical inputs, and maintain continuity under disruptions across multiple regions.
+              </p>
+            </div>
+            <div>
+              <div class="services-item-title">Digital Platforms &amp; Intelligence</div>
+              <p class="services-item-desc">
+                Visibility, data, and analytics layers that map flows, stress‑test platforms, and support dynamic decision‑making and trade finance.
+              </p>
+            </div>
+            <div>
+              <div class="services-item-title">Trade‑Linked &amp; Structured Finance</div>
+              <p class="services-item-desc">
+                Capital aligned with real assets and logistics — inventory, infrastructure, and offtake — enabling partners to scale without sacrificing resilience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESILIENCE -->
+    <section id="resilience" aria-labelledby="yaa-resilience-heading">
+      <div class="container">
+        <div class="section-eyebrow">Resilience &amp; Impact</div>
+        <h2 class="section-title" id="yaa-resilience-heading">
+          Commercial Resilience × Systemic Stability
+        </h2>
+        <p class="section-subtitle">
+          Profitable platforms fund inclusive growth; stable communities and partners enable long‑term operations. YAA.Group platforms are built to keep value chains operating when volatility tests them most.
+        </p>
+
+        <div class="pill-row">
+          <div class="pill">
+            <span class="pill-dot" style="background:var(--accent);"></span>
+            <span>Commercial Resilience</span>
+          </div>
+          <div class="pill">
+            <span class="pill-dot" style="background:var(--accent-2);"></span>
+            <span>Systemic Stability</span>
+          </div>
+        </div>
+
+        <div class="res-grid">
+          <article class="res-card">
+            <h3 class="res-title">End‑to‑End Control</h3>
+            <p class="res-desc">
+              Vertical integration gives direct control over critical stages, improving visibility, coordination, and the ability to act before disruptions cascade across markets.
+            </p>
+            <ul class="res-list">
+              <li>Early identification of bottlenecks and stress points</li>
+              <li>Aligned incentives from upstream suppliers to downstream offtakers</li>
+              <li>Reduced exposure to fragile external links</li>
             </ul>
+          </article>
+
+          <article class="res-card">
+            <h3 class="res-title">Continuity Under Stress</h3>
+            <p class="res-desc">
+              Integrated assets, contracts, and digital tools allow re‑routing, re‑scheduling, and re‑pricing when conditions shift.
+            </p>
+            <ul class="res-list">
+              <li>Rapid response to demand and supply shocks</li>
+              <li>Structured risk‑sharing with partners and communities</li>
+              <li>Stable quality and service levels through cycles</li>
+            </ul>
+          </article>
+
+          <article class="res-card">
+            <h3 class="res-title">Strategic Advantage</h3>
+            <p class="res-desc">
+              When other players face shortages, resilient platforms keep operating, building trust, market share, and long‑term strategic relevance.
+            </p>
+            <ul class="res-list">
+              <li>Preferential access to scarce resources</li>
+              <li>Data‑driven risk pricing and capital deployment</li>
+              <li>Partnerships anchored in reliability and performance</li>
+            </ul>
+          </article>
         </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <main id="main-content" class="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero__container">
-                <div class="hero__content">
-                    <h1 id="hero-title" class="hero__title">
-                        Architect of Resilient Value Chains
-                    </h1>
-                    <p class="hero__subtitle">
-                        YAA.Group designs, owns, and operates vertically integrated platforms across food, energy, materials, finance, healthcare, and digital sectors to deliver certainty in volatile markets.
-                    </p>
-                    <div class="hero__cta">
-                        <a href="#platforms" class="btn btn--primary">Explore Platforms</a>
-                        <a href="#contact" class="btn btn--secondary">Start Conversation</a>
-                    </div>
-                </div>
-                <div class="hero__visual">
-                    <div class="hero__image">
-                        <img src="images/yaa.group.horizontal.png" alt="YAA.Group Value-Chain Visualization" class="hero__img" loading="lazy" />
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Value Proposition Section -->
-        <section class="value-prop" aria-labelledby="value-title">
-            <div class="value-prop__container">
-                <h2 id="value-title" class="value-prop__title">How We Create Certainty in Volatile Markets</h2>
-                <div class="value-prop__grid">
-                    <article class="value-prop__card">
-                        <h3 class="value-prop__card-title">Farmgate Price Stabilization</h3>
-                        <p class="value-prop__card-text">We stabilize prices at the source, protecting producers and ensuring predictable supply chains for offtakers across agricultural value chains.</p>
-                    </article>
-                    <article class="value-prop__card">
-                        <h3 class="value-prop__card-title">Critical Input Security</h3>
-                        <p class="value-prop__card-text">Securing and de-risking critical inputs across energy, materials, and healthcare through vertically integrated ownership and operations.</p>
-                    </article>
-                    <article class="value-prop__card">
-                        <h3 class="value-prop__card-title">Supply Chain Resilience</h3>
-                        <p class="value-prop__card-text">Keeping essential value chains running across 65+ countries through integrated platforms that adapt to market volatility.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Platforms Preview Section -->
-        <section id="platforms" class="platforms-preview" aria-labelledby="platforms-title">
-            <div class="platforms-preview__container">
-                <h2 id="platforms-title" class="platforms-preview__title">Our Integrated Platforms</h2>
-                <p class="platforms-preview__subtitle">Operating across six critical sectors globally</p>
-                <div class="platforms-preview__grid">
-                    <a href="#" class="platform-card" aria-label="Food and Agriculture Platform">
-                        <div class="platform-card__icon">🌾</div>
-                        <h3 class="platform-card__title">Food & Agriculture</h3>
-                        <p class="platform-card__text">Stabilizing global food supply with integrated farming, processing, and distribution platforms.</p>
-                    </a>
-                    <a href="#" class="platform-card" aria-label="Energy and Resources Platform">
-                        <div class="platform-card__icon">⚡</div>
-                        <h3 class="platform-card__title">Energy & Resources</h3>
-                        <p class="platform-card__text">Securing energy supply chains with integrated production and distribution infrastructure.</p>
-                    </a>
-                    <a href="#" class="platform-card" aria-label="Materials Platform">
-                        <div class="platform-card__icon">🔧</div>
-                        <h3 class="platform-card__title">Materials & Sustainability</h3>
-                        <p class="platform-card__text">Building circular, low-carbon resource flows through integrated material value chains.</p>
-                    </a>
-                    <a href="#" class="platform-card" aria-label="Finance Platform">
-                        <div class="platform-card__icon">💼</div>
-                        <h3 class="platform-card__title">Finance & Risk</h3>
-                        <p class="platform-card__text">Managing value-chain financing and de-risking critical supply chains globally.</p>
-                    </a>
-                    <a href="#" class="platform-card" aria-label="Healthcare Platform">
-                        <div class="platform-card__icon">🏥</div>
-                        <h3 class="platform-card__title">Healthcare & Resilience</h3>
-                        <p class="platform-card__text">Ensuring healthcare supply chain resilience and accessibility across emerging markets.</p>
-                    </a>
-                    <a href="#" class="platform-card" aria-label="Digital Innovation Platform">
-                        <div class="platform-card__icon">🚀</div>
-                        <h3 class="platform-card__title">Digital & Innovation</h3>
-                        <p class="platform-card__text">Leveraging technology to optimize platform operations and market connectivity.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section id="contact" class="cta" aria-labelledby="cta-title">
-            <div class="cta__container">
-                <h2 id="cta-title" class="cta__title">Start Your Resilience Conversation</h2>
-                <p class="cta__text">Whether you're an offtaker seeking supply certainty, an asset owner looking for partnership, or an innovator exploring collaboration opportunities, let's build resilient value chains together.</p>
-                <a href="#contact-form" class="btn btn--large">Get in Touch</a>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer__container">
-            <div class="footer__section">
-                <h3 class="footer__title">YAA.Group</h3>
-                <p class="footer__text">Architect of Resilient Value Chains</p>
-            </div>
-            <div class="footer__section">
-                <h4 class="footer__heading">Navigation</h4>
-                <ul class="footer__links">
-                    <li><a href="#platforms">Platforms</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer__section">
-                <h4 class="footer__heading">Resources</h4>
-                <ul class="footer__links">
-                    <li><a href="/README.md">About YAA.Group</a></li>
-                    <li><a href="/DEVELOPMENT_ROADMAP.md">Development</a></li>
-                    <li><a href="/CONTRIBUTING.md">Contributing</a></li>
-                </ul>
-            </div>
-            <div class="footer__section">
-                <h4 class="footer__heading">Legal</h4>
-                <ul class="footer__links">
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                </ul>
-            </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="yaa-contact-heading">
+      <div class="container">
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-title" id="yaa-contact-heading">
+          Start a Resilience Conversation
+        </h2>
+        <p class="section-subtitle">
+          Explore how a value‑chain platform can secure your inputs, stabilize offtake, and create strategic advantage in volatile markets.
+        </p>
+
+        <div class="contact-wrap">
+          <div class="contact-box">
+            <h3>Partner with YAA.Group</h3>
+            <p>
+              Whether you are an offtaker, asset owner, public‑sector institution, or innovator, YAA.Group designs platforms that align incentives across the chain.
+            </p>
+            <p>
+              Email:
+              <a href="mailto:contact@yaa.group" class="contact-email">contact@yaa.group</a>
+            </p>
+            <p>
+              Share a brief on your current value‑chain challenges, regions of focus, and timelines, and a Platforms Lead will respond with potential engagement paths.
+            </p>
+          </div>
+
+          <div class="contact-box">
+            <form>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="org">Organisation</label>
+                <input id="org" name="organisation" type="text" placeholder="Company / institution" />
+              </div>
+              <div>
+                <label for="email">Work email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" />
+              </div>
+              <div>
+                <label for="message">Context</label>
+                <textarea id="message" name="message" placeholder="Briefly describe your value‑chain, regions, and key challenges."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit inquiry</button>
+            </form>
+          </div>
         </div>
-        <div class="footer__bottom">
-            <p>&copy; 2025 YAA.Group. All rights reserved.</p>
-            <p>Operating across 65+ countries | <a href="https://github.com/triqbit/yaa">GitHub Repository</a></p>
-        </div>
-    </footer>
-    
-    <!-- Scripts -->
-    <script src="js/main.js" defer></script>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      © <span id="year"></span> YAA.Group · Architect of Resilient Value Chains
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const navToggleButton = document.getElementById('yaa-nav-toggle-button');
+      const mobileNav = document.getElementById('yaa-mobile-nav');
+
+      if (navToggleButton && mobileNav) {
+        const mobileLinks = mobileNav.querySelectorAll('a');
+
+        function setNavState(open) {
+          navToggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggleButton.setAttribute(
+            'aria-label',
+            open ? 'Close main navigation' : 'Open main navigation'
+          );
+
+          mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
+          mobileNav.style.display = open ? 'block' : 'none';
+
+          document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        setNavState(false);
+
+        navToggleButton.addEventListener('click', () => {
+          const isOpen = navToggleButton.getAttribute('aria-expanded') === 'true';
+          setNavState(!isOpen);
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            setNavState(false);
+          });
+        });
+
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            setNavState(false);
+            navToggleButton.focus();
+          }
+        });
+      }
+    </script>
+  </footer>
 </body>
 </html>
