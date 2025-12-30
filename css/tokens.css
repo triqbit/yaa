@@ -1,0 +1,226 @@
+/**
+ * YAA.Group Design Tokens
+ * Centralized design system for consistent theming across all pages
+ * Scope: Colors, typography, spacing, shadows, z-indices, animations
+ */
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════
+     COLOR PALETTE - Semantic and functional
+  ═══════════════════════════════════════════════════════════════ */
+
+  /* Brand Colors */
+  --color-brand-primary: #0B9BA8;
+  --color-brand-primary-light: #0FB3C0;
+  --color-brand-primary-dark: #087D88;
+  
+  --color-brand-accent: #E8A545;
+  --color-brand-accent-light: #F0B85C;
+  --color-brand-accent-dark: #D68E2C;
+
+  /* Surface Colors - Dark Mode */
+  --color-surface-base: #020617;
+  --color-surface-elevated: #050816;
+  --color-surface-soft: #0B1220;
+  --color-surface-interactive: #111827;
+  --color-surface-overlay: #0F172A;
+
+  /* Border Colors */
+  --color-border-subtle: #1F2937;
+  --color-border-default: #2D3748;
+  --color-border-strong: #374151;
+
+  /* Text Colors */
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #E5E7EB;
+  --color-text-tertiary: #9CA3AF;
+  --color-text-muted: #6B7280;
+  --color-text-disabled: #4B5563;
+
+  /* Semantic Colors */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Gradient Colors */
+  --color-gradient-primary: linear-gradient(135deg, #0066cc 0%, #003d99 100%);
+  --color-gradient-accent: linear-gradient(to right, #0B9BA8, #E8A545);
+  --color-gradient-dark: radial-gradient(circle at 0% 0%, #020617 0, #050816 45%, #000 100%);
+
+  /* ═══════════════════════════════════════════════════════════════
+     TYPOGRAPHY - Semantic font system
+  ═══════════════════════════════════════════════════════════════ */
+
+  /* Font Stack */
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  --font-family-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+
+  /* Font Sizes - Modular Scale (1.125 ratio) */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 2.7rem;     /* 43px */
+  --font-size-6xl: 3.5rem;     /* 56px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-widest: 0.16em;
+
+  /* ═══════════════════════════════════════════════════════════════
+     SPACING - Consistent spacing scale (4px base unit)
+  ═══════════════════════════════════════════════════════════════ */
+
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-7: 1.75rem;   /* 28px */
+  --space-8: 2rem;      /* 32px */
+  --space-9: 2.25rem;   /* 36px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-14: 3.5rem;   /* 56px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ═══════════════════════════════════════════════════════════════
+     BORDER RADIUS - Component-level shape system
+  ═══════════════════════════════════════════════════════════════ */
+
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-base: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 999px;
+
+  /* ═══════════════════════════════════════════════════════════════
+     SHADOWS - Depth and elevation system
+  ═══════════════════════════════════════════════════════════════ */
+
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.1);
+  --shadow-base: 0 4px 8px rgba(15, 23, 42, 0.15);
+  --shadow-md: 0 8px 16px rgba(15, 23, 42, 0.25);
+  --shadow-lg: 0 12px 24px rgba(15, 23, 42, 0.35);
+  --shadow-xl: 0 16px 40px rgba(15, 23, 42, 0.5);
+  --shadow-2xl: 0 20px 55px rgba(15, 23, 42, 0.95);
+  --shadow-glow: 0 0 20px rgba(11, 155, 168, 0.4);
+  --shadow-glow-accent: 0 0 20px rgba(232, 165, 69, 0.3);
+
+  /* ═══════════════════════════════════════════════════════════════
+     Z-INDEX SCALE - Layering system (stacking context)
+  ═══════════════════════════════════════════════════════════════ */
+
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
+  --z-notification: 80;
+
+  /* ═══════════════════════════════════════════════════════════════
+     ANIMATIONS & TRANSITIONS
+  ═══════════════════════════════════════════════════════════════ */
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-slower: 0.5s ease;
+
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ═══════════════════════════════════════════════════════════════
+     BREAKPOINTS - Responsive design system
+  ═══════════════════════════════════════════════════════════════ */
+
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ═══════════════════════════════════════════════════════════════
+     CONTAINER SIZES
+  ═══════════════════════════════════════════════════════════════ */
+
+  --container-xs: 20rem;      /* 320px */
+  --container-sm: 24rem;      /* 384px */
+  --container-md: 28rem;      /* 448px */
+  --container-lg: 32rem;      /* 512px */
+  --container-xl: 36rem;      /* 576px */
+  --container-2xl: 42rem;     /* 672px */
+  --container-3xl: 48rem;     /* 768px */
+  --container-4xl: 56rem;     /* 896px */
+  --container-5xl: 64rem;     /* 1024px */
+  --container-6xl: 72rem;     /* 1152px */
+  --container-7xl: 80rem;     /* 1280px */
+  --container-full: 100%;
+  --container-max: 1400px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK MODE OVERRIDES (if light mode is ever added)
+═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode is already the default, keep as is */
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION - Accessibility for motion-sensitive users
+═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+    --transition-slower: 0ms;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
